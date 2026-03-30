@@ -1,0 +1,304 @@
+/* ---- CONTACT ---- */
+.contact {
+  padding: 8rem 0;
+  background: #211100eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::after {
+  content: 'CONTACT';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 300;
+  color: rgba(201, 168, 76, 0.04);
+  letter-spacing: 0.2em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.contact__info {}
+
+.contact__info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.contact__info-item {}
+
+.contact__info-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.contact__info-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--cream);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.contact__info-note {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.contact__hours {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.contact__hours-title {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.contact__hour-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.07);
+}
+
+.contact__hour-row span:last-child {
+  color: var(--cream-muted);
+}
+
+/* ---- FORM ---- */
+.contact__form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 3rem;
+}
+
+.contact__form-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+
+.contact__form-sub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  margin-bottom: 2.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background:#211100eb;
+  border: 1px solid var(--border);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--gold-dark);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group select option {
+  background: var(--bg-primary);
+}
+
+.contact__submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 1.1rem 2rem !important;
+  font-size: 0.72rem !important;
+}
+
+.contact__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact__success {
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid var(--border-strong);
+  padding: 1rem 1.5rem;
+  margin-top: 1.2rem;
+  font-size: 0.78rem;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.contact__error {
+  background: rgba(180, 60, 60, 0.1);
+  border: 1px solid rgba(180, 60, 60, 0.3);
+  padding: 1rem 1.5rem;
+  margin-top: 1.2rem;
+  font-size: 0.78rem;
+  color: #e07070;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* ---- FIELD VALIDATION STATES ---- */
+
+/* Required asterisk */
+.form-required {
+  color: var(--gold);
+  font-size: 0.75rem;
+  margin-left: 2px;
+}
+
+/* Error state — red border on input/select/textarea */
+.form-group--error input,
+.form-group--error textarea,
+.form-group--error select {
+  border-color: #c0504d !important;
+  background: rgba(192, 80, 77, 0.05);
+}
+
+.form-group--error input:focus,
+.form-group--error textarea:focus,
+.form-group--error select:focus {
+  border-color: #e07070 !important;
+  box-shadow: 0 0 0 2px rgba(192, 80, 77, 0.12);
+}
+
+/* Error label turns red */
+.form-group--error label {
+  color: #e07070 !important;
+}
+
+/* Inline error message under the field */
+.form-error-msg {
+  font-size: 0.68rem;
+  color: #e07070;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  animation: slideDown 0.2s ease both;
+}
+
+/* Hint message (formatted date display) */
+.form-hint-msg {
+  font-size: 0.68rem;
+  color: var(--gold-dark);
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  animation: slideDown 0.2s ease both;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Disabled check-out field */
+.form-group input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Night summary badge */
+.form-nights-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--gold-muted);
+  border: 1px solid var(--border-strong);
+  padding: 0.75rem 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.78rem;
+  color: var(--cream-muted);
+  letter-spacing: 0.05em;
+  animation: slideDown 0.25s ease both;
+}
+
+.form-nights-badge strong {
+  color: var(--gold-light);
+  font-weight: 400;
+}
+
+.form-nights-icon {
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .contact__form {
+    padding: 2rem;
+  }
+}

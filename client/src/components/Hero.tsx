@@ -34,11 +34,11 @@ const Hero: React.FC = () => {
       <div className="hero__stats">
         <div className="container hero__stats-inner">
           <div className="hero__stat">
-            <span className="hero__stat-num">4</span>
+            <span className="hero__stat-num">5</span>
             <span className="hero__stat-label">Bedrooms</span>
           </div>
           <div className="hero__stat">
-            <span className="hero__stat-num">12+</span>
+            <span className="hero__stat-num">20+</span>
             <span className="hero__stat-label">Amenities</span>
           </div>
           <div className="hero__stat">

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import '../styles/Gallery.css'
+import exterior from '../assets/bg.png'
+import bedroom from '../assets/bg3.png'
 
 const photos = [
-  { url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=80', label: 'Exterior' },
-  { url: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80', label: 'Master Bedroom' },
+  { url: exterior, label: 'Exterior' },
+  { url: bedroom, label: 'Master Bedroom' },
   { url: 'https://images.unsplash.com/photo-1506974210756-8e1b8985d348?w=700&q=80', label: 'Lake View' },
   { url: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=700&q=80', label: 'Pool' },
   { url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80', label: 'Kitchen' },

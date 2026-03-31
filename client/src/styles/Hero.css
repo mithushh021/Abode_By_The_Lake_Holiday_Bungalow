@@ -49,6 +49,7 @@
   padding: 0.45rem 1.4rem;
   margin-bottom: 2rem;
   animation: fadeUp 0.8s 0.2s both;
+  background-color: black;
 }
 
 .hero__title {
@@ -71,7 +72,7 @@
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   font-weight: 300;
   font-style: italic;
-  color: var(--cream-muted);
+  color: white;
   margin-bottom: 2.5rem;
   animation: fadeUp 0.9s 0.5s both;
 }

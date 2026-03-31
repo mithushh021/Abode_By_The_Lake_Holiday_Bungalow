@@ -4,7 +4,7 @@ import aboutImg from '../assets/bg.png'
 
 
 const features = [
-  'Lakeside Privacy', 'Gated Property', 'Chef\'s Kitchen',
+  'Lakeside View', 'Gated Property', 'Chef\'s Kitchen',
   'Outdoor Dining', 'Sunrise Views', 'Serene Gardens',
 ]
 
@@ -25,7 +25,7 @@ const About: React.FC = () => {
 
           <div className="about__content">
             <span className="section-label">Our Story</span>
-            <h2 className="section-title">A Private Sanctuary<br />Unlike Any Other</h2>
+            <h2 className="section-title">Your Own Private Sanctuary by the Lake.</h2>
             <div className="section-divider" />
 
             <blockquote className="about__quote">
@@ -33,18 +33,14 @@ const About: React.FC = () => {
             </blockquote>
 
             <p className="about__text">
-              Abode by the Lake is a lovingly owned private holiday bungalow, built
-              with a singular vision — to offer guests an experience of unhurried luxury
-              in the lap of nature. Nestled against a tranquil lake, the property blends
-              timeless architecture with modern comforts.
+              Abode by the Lake is an exclusive, privately owned holiday bungalow crafted for those who appreciate space, privacy, and understated luxury. Set along a tranquil lakeside in Batticaloa, the residence offers a seamless blend of contemporary comfort and serene natural surroundings.
             </p>
             <p className="about__text">
-              Whether you're escaping the city for a weekend or planning an extended
-              family retreat, our bungalow is your personal haven. From the sun-drenched
-              verandah to the cool lake breeze at dusk, every corner invites you to slow
-              down and savour the moment.
+              The villa features five generously appointed bedrooms, elegant living spaces, and a private pool—designed to accommodate families and groups in complete comfort. Expansive interiors, a sunlit verandah, and refined finishes create an atmosphere that is both inviting and effortlessly sophisticated.
             </p>
-
+<p className="about__text">
+Outdoors, landscaped gardens and open-air seating provide the perfect setting to unwind, while uninterrupted lake views bring a sense of calm to every moment. Whether for a weekend escape or an extended retreat, Abode by the Lake delivers a peaceful, private experience defined by comfort and quiet luxury.
+            </p>
             <div className="about__features">
               {features.map(f => (
                 <div key={f} className="about__feature">

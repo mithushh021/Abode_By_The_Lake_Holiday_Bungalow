@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/About.css'
 import aboutImg from '../assets/bg.png'
-import aboutImg2 from '../assets/bg2.png'
+
 
 const features = [
   'Lakeside Privacy', 'Gated Property', 'Chef\'s Kitchen',

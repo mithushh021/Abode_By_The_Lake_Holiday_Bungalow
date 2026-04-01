@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
 
       {/* Main content */}
       <div className="hero__content">
-        <span className="hero__eyebrow">Kandy, Sri Lanka</span>
+        <span className="hero__eyebrow">Batticaloa, Sri Lanka</span>
 
         <div className="hero__badge">
           Exclusive Lakeside Retreat

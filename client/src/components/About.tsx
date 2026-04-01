@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import '../styles/About.css'
-import aboutImg from '../assets/bg.png'
+import FrontGate from '../assets/FrontGate.jpg'
 
 const features = [
   'Lakeside View',
@@ -53,7 +53,7 @@ const About: React.FC = () => {
 
             <img
               className="about__image-main"
-              src={aboutImg}
+              src={FrontGate}
               alt="Abode by the Lake exterior"
             />
 

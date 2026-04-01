@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Hero.css'
+import BedRoom2 from '../assets/BedRoom2.jpg'
 
 const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -9,7 +10,12 @@ const Hero: React.FC = () => {
   return (
     <section className="hero" id="hero">
       {/* Cinematic background */}
-      <div className="hero__bg" />
+      <div className="hero__bg">
+        <img
+          src={BedRoom2}   // ← replace with your actual image path
+          alt="Bungalow Lakeside View"
+        />
+      </div>
 
       {/* Multi-layer atmospheric overlay */}
       <div className="hero__overlay" />
@@ -30,9 +36,7 @@ const Hero: React.FC = () => {
       <div className="hero__content">
         <span className="hero__eyebrow">Batticaloa, Sri Lanka</span>
 
-        <div className="hero__badge">
-          Exclusive Lakeside Retreat
-        </div>
+        <div className="hero__badge">Exclusive Lakeside Retreat</div>
 
         <h1 className="hero__title">
           Abode by<br />
@@ -41,7 +45,6 @@ const Hero: React.FC = () => {
 
         <p className="hero__subtitle">Where Serenity Meets Splendour</p>
 
-        {/* Decorative divider */}
         <div className="hero__divider">
           <div className="hero__divider-line" />
           <div className="hero__divider-diamond" />

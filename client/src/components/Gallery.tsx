@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/Gallery.css'
-import exterior from '../assets/bg.png'
-import bedroom from '../assets/bg3.png'
+import exterior from '../assets/FrontGate.jpg'
+import bedroom from '../assets/FrontGate.jpg'
 
 const photos = [
   { url: exterior, label: 'Exterior' },

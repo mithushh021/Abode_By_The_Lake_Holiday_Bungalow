@@ -190,7 +190,7 @@ const Contact: React.FC = () => {
             <div className="contact__info-items">
               <div className="contact__info-item">
                 <span className="contact__info-label">Phone & WhatsApp</span>
-                <span className="contact__info-value">+94 77 123 4567</span>
+                <span className="contact__info-value">+94 77 655 0367 </span>
                 <span className="contact__info-note">We typically respond within 2 hours</span>
               </div>
               <div className="contact__info-item">
@@ -200,8 +200,8 @@ const Contact: React.FC = () => {
               </div>
               <div className="contact__info-item">
                 <span className="contact__info-label">Address</span>
-                <span className="contact__info-value">Lake Road, Negombo</span>
-                <span className="contact__info-note">Western Province, Sri Lanka 11500</span>
+                <span className="contact__info-value">47/A, Upstair Road, Batticaloa</span>
+                <span className="contact__info-note">Eastern Province, Sri Lanka 30000</span>
               </div>
             </div>
 

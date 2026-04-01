@@ -4,14 +4,14 @@ import '../styles/Facilities.css'
 const facilities = [
   {
     icon: '🛏️',
-    title: '4 Luxury Bedrooms',
-    desc: 'Spacious king and queen bedrooms with premium linen, blackout curtains, and lake-facing windows that greet you with sunrise every morning.',
-    tag: 'Sleeps up to 8',
+    title: '5 Luxury Bedrooms',
+    desc: 'Spacious Super king and King bedrooms with premium linen, blackout curtains, and lake-facing windows that greet you with sunrise every morning.',
+    tag: 'Sleeps up to 15',
   },
   {
     icon: '🌊',
-    title: 'Private Lake Access',
-    desc: 'Step directly onto the lake from your own private jetty. Perfect for morning kayaking, fishing, or simply sitting in silence with the water.',
+    title: 'Lake Access',
+    desc: 'Enjoy serene views of the lake, where calm waters and open skies create a truly relaxing atmosphere.',
     tag: 'Exclusive Access',
   },
   {
@@ -23,13 +23,13 @@ const facilities = [
   {
     icon: '🏊',
     title: 'Swimming Pool',
-    desc: 'A stunning Swimming Pool that merges seamlessly with the lake horizon. Heated for cool evenings, set among lush tropical landscaping.',
-    tag: 'Heated Pool',
+    desc: 'The villa features a private indoor swimming pool, a children’s pool, and a Jacuzzi, creating a refined and relaxing environment for guests of all ages.',
+    tag: 'children’s pool',
   },
   {
     icon: '🌿',
     title: 'Landscaped Gardens',
-    desc: 'Half an acre of manicured tropical gardens, shaded walkways, and a private hammock garden perfect for afternoon reading or stargazing at night.',
+    desc: 'The villa is surrounded by lush greenery, with a rooftop garden and verdant views visible from the TV room, offering a peaceful and refreshing environment.',
     tag: 'Private Garden',
   },
   {
@@ -53,8 +53,8 @@ const facilities = [
   {
     icon: '🚗',
     title: 'Secured Parking',
-    desc: 'Gated compound with secure parking for up to four vehicles, plus electric vehicle charging points for modern travellers.',
-    tag: 'EV Charging',
+    desc: 'The villa offers secure, gated parking for up to four vehicles, providing safety and ease for your stay.',
+    tag: 'Gated Parking',
   },
 ]
 

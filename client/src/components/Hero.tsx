@@ -8,37 +8,70 @@ const Hero: React.FC = () => {
 
   return (
     <section className="hero" id="hero">
+      {/* Cinematic background */}
       <div className="hero__bg" />
+
+      {/* Multi-layer atmospheric overlay */}
       <div className="hero__overlay" />
 
+      {/* Film grain texture */}
+      <div className="hero__grain" />
+
+      {/* Top centre drop rule */}
+      <div className="hero__rule" />
+
+      {/* Corner ornaments */}
+      <div className="hero__corner hero__corner--tl" />
+      <div className="hero__corner hero__corner--tr" />
+      <div className="hero__corner hero__corner--bl" />
+      <div className="hero__corner hero__corner--br" />
+
+      {/* Main content */}
       <div className="hero__content">
-        <span className="hero__badge">Exclusive Lakeside Retreat</span>
+        <span className="hero__eyebrow">Batticaloa, Sri Lanka</span>
+
+        <div className="hero__badge">
+          Exclusive Lakeside Retreat
+        </div>
+
         <h1 className="hero__title">
-          Abode by<br /><span className="hero__title-italic">the Lake</span>
+          Abode by<br />
+          <em>the Lake</em>
         </h1>
+
         <p className="hero__subtitle">Where Serenity Meets Splendour</p>
+
+        {/* Decorative divider */}
+        <div className="hero__divider">
+          <div className="hero__divider-line" />
+          <div className="hero__divider-diamond" />
+          <div className="hero__divider-line" />
+        </div>
+
         <p className="hero__desc">
-          A private luxury bungalow nestled beside the water's edge — crafted for those
-          who seek beauty, calm, and extraordinary comfort.
+          A private luxury bungalow nestled beside the water's edge —
+          crafted for those who seek beauty, calm, and extraordinary comfort.
         </p>
+
         <div className="hero__actions">
-          <button className="btn-gold" onClick={() => scrollTo('contact')}>
-            <span>Reserve Your Stay</span>
+          <button className="btn-primary" onClick={() => scrollTo('contact')}>
+            Reserve Your Stay
           </button>
-          <button className="btn-gold" onClick={() => scrollTo('facilities')} style={{ borderColor: 'rgba(201,168,76,0.35)', color: 'var(--cream-muted)' }}>
-            <span>Explore Bungalow</span>
+          <button className="btn-ghost" onClick={() => scrollTo('facilities')}>
+            Explore Bungalow
           </button>
         </div>
       </div>
 
+      {/* Stats bar */}
       <div className="hero__stats">
         <div className="container hero__stats-inner">
           <div className="hero__stat">
-            <span className="hero__stat-num">4</span>
+            <span className="hero__stat-num">5</span>
             <span className="hero__stat-label">Bedrooms</span>
           </div>
           <div className="hero__stat">
-            <span className="hero__stat-num">12+</span>
+            <span className="hero__stat-num">20+</span>
             <span className="hero__stat-label">Amenities</span>
           </div>
           <div className="hero__stat">
@@ -52,6 +85,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
+      {/* Vertical scroll indicator */}
       <div className="hero__scroll" onClick={() => scrollTo('about')}>
         <span>Scroll</span>
         <div className="hero__scroll-line" />

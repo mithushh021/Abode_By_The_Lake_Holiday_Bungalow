@@ -6,28 +6,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;500&display=swap');
 
 :root {
-  --bg-primary: #0b0a09;
-  --bg-secondary: #111009;
-  --bg-card: #16140f;
+  --bg-primary:    #0b0a09;
+  --bg-secondary:  #111009;
+  --bg-card:       #16140f;
   --bg-card-hover: #1d1a12;
-  --gold: #c9a84c;
-  --gold-light: #e2c57a;
-  --gold-dark: #9a7a30;
-  --gold-muted: rgba(201, 168, 76, 0.15);
-  --cream: #f5ede0;
-  --cream-muted: rgba(245, 237, 224, 0.7);
-  --cream-dim: rgba(245, 237, 224, 0.4);
-  --text-primary: #f5ede0;
-  --text-secondary: rgba(245, 237, 224, 0.65);
-  --text-dim: rgba(245, 237, 224, 0.35);
-  --border: rgba(201, 168, 76, 0.2);
+  --gold:          #c9a84c;
+  --gold-light:    #e2c57a;
+  --gold-dark:     #9a7a30;
+  --gold-muted:    rgba(201, 168, 76, 0.15);
+  --cream:         #f5ede0;
+  --cream-muted:   rgba(245, 237, 224, 0.7);
+  --cream-dim:     rgba(245, 237, 224, 0.4);
+  --text-primary:  #f5ede0;
+  --text-secondary:rgba(245, 237, 224, 0.65);
+  --text-dim:      rgba(245, 237, 224, 0.35);
+  --border:        rgba(201, 168, 76, 0.2);
   --border-strong: rgba(201, 168, 76, 0.45);
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Josefin Sans', sans-serif;
-  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-gold: 0 0 40px rgba(201, 168, 76, 0.12);
-  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.5);
-  --radius: 2px;
+  --font-display:  'Cormorant Garamond', Georgia, serif;
+  --font-body:     'Josefin Sans', sans-serif;
+  --transition:    0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-gold:   0 0 40px rgba(201, 168, 76, 0.12);
+  --shadow-card:   0 8px 40px rgba(0, 0, 0, 0.5);
+  --radius:        2px;
 }
 
 *, *::before, *::after {
@@ -76,27 +76,12 @@ p {
   line-height: 1.8;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: var(--font-body); border: none; outline: none; }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button {
-  cursor: pointer;
-  font-family: var(--font-body);
-  border: none;
-  outline: none;
-}
-
-/* ---- SECTION LAYOUT ---- */
-section {
-  position: relative;
-}
+/* ---- LAYOUT ---- */
+section { position: relative; }
 
 .container {
   max-width: 1200px;
@@ -104,11 +89,12 @@ section {
   padding: 0 2rem;
 }
 
+/* ---- SHARED SECTION ELEMENTS ---- */
 .section-label {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 400;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
   display: block;
@@ -117,13 +103,14 @@ section {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 300;
   color: var(--cream);
   margin-bottom: 1.5rem;
   line-height: 1.1;
 }
 
+/* Base divider — a simple gold line. Sections extend via scoped CSS. */
 .section-divider {
   width: 60px;
   height: 1px;
@@ -131,10 +118,13 @@ section {
   margin-bottom: 2rem;
 }
 
-/* ---- GOLD BUTTON ---- */
+/* ---- GLOBAL BTN-GOLD ---- */
+/* Used by Navbar CTA, Facilities, Pricing, Contact.
+   Hero uses its own .btn-primary and .btn-ghost instead. */
 .btn-gold {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   padding: 0.9rem 2.2rem;
   background: transparent;
@@ -145,10 +135,10 @@ section {
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  transition: var(--transition);
+  transition: color var(--transition);
   position: relative;
   overflow: hidden;
-  background-color: #0b0a09;
+  cursor: pointer;
 }
 
 .btn-gold::before {
@@ -161,32 +151,17 @@ section {
   z-index: 0;
 }
 
-.btn-gold:hover::before {
-  transform: translateX(0);
-}
+.btn-gold:hover::before { transform: translateX(0); }
+.btn-gold:hover { color: var(--bg-primary); }
+.btn-gold > * { position: relative; z-index: 1; }
 
-.btn-gold:hover {
-  color: var(--bg-primary);
+/* Disabled state (used by Contact submit) */
+.btn-gold:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
-
-.btn-gold span, .btn-gold svg {
-  position: relative;
-  z-index: 1;
-}
-
-/* ---- SCROLLBAR ---- */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--gold-dark);
-  border-radius: 0;
-}
+.btn-gold:disabled:hover::before { transform: translateX(-105%); }
+.btn-gold:disabled:hover { color: var(--gold); }
 
 /* ---- ANIMATIONS ---- */
 @keyframes fadeUp {
@@ -204,9 +179,7 @@ section {
   100% { background-position: 200% center; }
 }
 
-.fade-up {
-  animation: fadeUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
-}
+.fade-up { animation: fadeUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) both; }
 
 .gold-shimmer {
   background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
@@ -216,3 +189,8 @@ section {
   background-clip: text;
   animation: shimmer 4s linear infinite;
 }
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 0; }

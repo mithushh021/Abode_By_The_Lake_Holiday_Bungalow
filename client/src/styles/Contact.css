@@ -28,16 +28,13 @@
   align-items: start;
 }
 
-.contact__info {}
-
+/* ---- LEFT INFO ---- */
 .contact__info-items {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   margin-bottom: 3rem;
 }
-
-.contact__info-item {}
 
 .contact__info-label {
   font-size: 0.6rem;
@@ -89,7 +86,7 @@
   color: var(--cream-muted);
 }
 
-/* ---- FORM ---- */
+/* ---- FORM CARD ---- */
 .contact__form {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -111,6 +108,7 @@
   margin-bottom: 2.5rem;
 }
 
+/* ---- FORM LAYOUT ---- */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -135,7 +133,7 @@
 .form-group input,
 .form-group textarea,
 .form-group select {
-  background:#211100eb;
+  background: #211100eb;
   border: 1px solid var(--border);
   color: var(--cream);
   font-family: var(--font-body);
@@ -169,19 +167,17 @@
   background: var(--bg-primary);
 }
 
+/* ---- SUBMIT BUTTON ---- */
+/* Extends global .btn-gold — no !important hacks needed */
 .contact__submit {
   width: 100%;
-  justify-content: center;
   margin-top: 0.5rem;
-  padding: 1.1rem 2rem !important;
-  font-size: 0.72rem !important;
+  padding: 1.1rem 2rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
 }
 
-.contact__submit:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
+/* ---- STATUS MESSAGES ---- */
 .contact__success {
   background: rgba(201, 168, 76, 0.08);
   border: 1px solid var(--border-strong);
@@ -204,36 +200,31 @@
   text-align: center;
 }
 
-/* ---- FIELD VALIDATION STATES ---- */
-
-/* Required asterisk */
+/* ---- VALIDATION STATES ---- */
 .form-required {
   color: var(--gold);
   font-size: 0.75rem;
   margin-left: 2px;
 }
 
-/* Error state — red border on input/select/textarea */
 .form-group--error input,
 .form-group--error textarea,
 .form-group--error select {
-  border-color: #c0504d !important;
+  border-color: #c0504d;
   background: rgba(192, 80, 77, 0.05);
 }
 
 .form-group--error input:focus,
 .form-group--error textarea:focus,
 .form-group--error select:focus {
-  border-color: #e07070 !important;
+  border-color: #e07070;
   box-shadow: 0 0 0 2px rgba(192, 80, 77, 0.12);
 }
 
-/* Error label turns red */
 .form-group--error label {
-  color: #e07070 !important;
+  color: #e07070;
 }
 
-/* Inline error message under the field */
 .form-error-msg {
   font-size: 0.68rem;
   color: #e07070;
@@ -244,7 +235,6 @@
   animation: slideDown 0.2s ease both;
 }
 
-/* Hint message (formatted date display) */
 .form-hint-msg {
   font-size: 0.68rem;
   color: var(--gold-dark);
@@ -260,7 +250,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Disabled check-out field */
 .form-group input:disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -286,10 +275,9 @@
   font-weight: 400;
 }
 
-.form-nights-icon {
-  font-size: 1rem;
-}
+.form-nights-icon { font-size: 1rem; }
 
+/* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
   .contact__grid {
     grid-template-columns: 1fr;

@@ -20,25 +20,36 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [menuOpen])
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setMenuOpen(false)
   }
 
   return (
-    <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
+    <nav className={`navbar${scrolled ? ' scrolled' : ''}`} aria-label="Main navigation">
       <div className="container navbar__inner">
-        <div className="navbar__logo">
+        <button className="navbar__logo" onClick={() => scrollTo('hero')} aria-label="Back to top">
           <span className="navbar__logo-name">Abode by the Lake</span>
           <span className="navbar__logo-tagline">Luxury Holiday Bungalow</span>
-        </div>
+        </button>
 
-        <ul className={`navbar__links${menuOpen ? ' open' : ''}`}>
+        <ul id="primary-navigation" className={`navbar__links${menuOpen ? ' open' : ''}`}>
           {navLinks.map(link => (
             <li key={link.target}>
-              <span className="navbar__link" onClick={() => scrollTo(link.target)}>
+              <button className="navbar__link" onClick={() => scrollTo(link.target)}>
                 {link.label}
-              </span>
+              </button>
             </li>
           ))}
           <li>
@@ -48,7 +59,13 @@ const Navbar: React.FC = () => {
           </li>
         </ul>
 
-        <button className="navbar__menu-btn" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+        <button
+          className="navbar__menu-btn"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+        >
           <span />
           <span />
           <span />

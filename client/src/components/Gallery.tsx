@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/Gallery.css'
 import exterior from '../assets/bg.png'
 import bedroom from '../assets/bg3.png'
@@ -13,7 +13,18 @@ const photos = [
 ]
 
 const Gallery: React.FC = () => {
-  const [lightbox, setLightbox] = useState<string | null>(null)
+  const [lightbox, setLightbox] = useState<(typeof photos)[number] | null>(null)
+
+  useEffect(() => {
+    if (!lightbox) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setLightbox(null)
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [lightbox])
 
   return (
     <section className="gallery" id="gallery">
@@ -28,20 +39,37 @@ const Gallery: React.FC = () => {
       <div className="container">
         <div className="gallery__grid">
           {photos.map((p, i) => (
-            <div className="gallery__item" key={i} onClick={() => setLightbox(p.url)}>
+            <button
+              className="gallery__item"
+              key={i}
+              onClick={() => setLightbox(p)}
+              aria-label={`View ${p.label} photo`}
+            >
               <img className="gallery__img" src={p.url} alt={p.label} />
-              <div className="gallery__item-overlay">
+              <span className="gallery__item-overlay" aria-hidden="true">
                 <span className="gallery__item-icon">⊕</span>
-              </div>
-            </div>
+              </span>
+            </button>
           ))}
         </div>
       </div>
 
       {lightbox && (
-        <div className="gallery__lightbox" onClick={() => setLightbox(null)}>
-          <button className="gallery__lightbox-close" onClick={() => setLightbox(null)}>✕</button>
-          <img src={lightbox} alt="Gallery" onClick={e => e.stopPropagation()} />
+        <div
+          className="gallery__lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${lightbox.label} photo`}
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            className="gallery__lightbox-close"
+            onClick={() => setLightbox(null)}
+            aria-label="Close photo"
+          >
+            ✕
+          </button>
+          <img src={lightbox.url} alt={lightbox.label} onClick={e => e.stopPropagation()} />
         </div>
       )}
     </section>

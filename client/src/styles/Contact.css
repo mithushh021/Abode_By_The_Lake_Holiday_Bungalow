@@ -1,6 +1,6 @@
 /* ---- CONTACT ---- */
 .contact {
-  padding: 8rem 0;
+  padding-block: clamp(5rem, 8vw, 7.5rem);
   background: #211100eb;
   position: relative;
   overflow: hidden;
@@ -23,8 +23,8 @@
 
 .contact__grid {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 6rem;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
   align-items: start;
 }
 
@@ -90,7 +90,7 @@
 .contact__form {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 3rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 .contact__form-title {
@@ -111,8 +111,8 @@
 /* ---- FORM LAYOUT ---- */
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .form-group {
@@ -156,6 +156,7 @@
 .form-group textarea:focus,
 .form-group select:focus {
   border-color: var(--gold-dark);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
 }
 
 .form-group textarea {
@@ -283,10 +284,17 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .form-row {
-    grid-template-columns: 1fr;
-  }
   .contact__form {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact__form {
+    padding: 1.25rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }

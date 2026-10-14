@@ -9,7 +9,6 @@
 
 /* ── Section ── */
 .about {
-  padding: 10rem 0;
   background: var(--bg-secondary);
   overflow: hidden;
   position: relative;
@@ -28,9 +27,9 @@
 /* ── Grid ── */
 .about__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 7rem;
-  align-items: start;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(3rem, 7vw, 6rem);
+  align-items: center;
 }
 
 /* ── Image Side ── */
@@ -152,7 +151,7 @@
 
 /* ── Content Side ── */
 .about__content {
-  padding-top: 1.5rem;
+  min-width: 0;
 }
 
 /* Override global section-label inside About to add the leader line */
@@ -331,12 +330,15 @@
 }
 
 @media (max-width: 560px) {
-  .about {
-    padding: 6rem 0;
-  }
   .about__features {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+  }
+
+  @media (max-width: 960px) {
+    .about__grid {
+      gap: 3rem;
+    }
   }
   .about__image-badge {
     width: 58px;
@@ -344,5 +346,13 @@
   }
   .about__image-badge-num {
     font-size: 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__reveal,
+  .about__reveal--left {
+    opacity: 1;
+    transform: none;
   }
 }

@@ -86,10 +86,10 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Vertical scroll indicator */}
-      <div className="hero__scroll" onClick={() => scrollTo('about')}>
+      <button className="hero__scroll" onClick={() => scrollTo('about')} aria-label="Scroll to our story">
         <span>Scroll</span>
         <div className="hero__scroll-line" />
-      </div>
+      </button>
     </section>
   )
 }

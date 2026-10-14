@@ -39,6 +39,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -49,6 +50,7 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* Noise texture overlay */
@@ -80,13 +82,51 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button { cursor: pointer; font-family: var(--font-body); border: none; outline: none; }
 
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--bg-primary);
+  background: var(--gold-light);
+}
+
 /* ---- LAYOUT ---- */
-section { position: relative; }
+section {
+  position: relative;
+  scroll-margin-top: 5rem;
+}
 
 .container {
-  max-width: 1200px;
+  width: min(calc(100% - 3rem), 1200px);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0;
+}
+
+.about,
+.facilities,
+.gallery,
+.pricing,
+.location,
+.contact {
+  padding-block: clamp(5rem, 8vw, 7.5rem);
+}
+
+.facilities__header,
+.gallery__header,
+.pricing__header {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.facilities__header .section-divider,
+.gallery__header .section-divider,
+.pricing__header .section-divider {
+  margin-inline: auto;
 }
 
 /* ---- SHARED SECTION ELEMENTS ---- */
@@ -194,3 +234,14 @@ section { position: relative; }
 ::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

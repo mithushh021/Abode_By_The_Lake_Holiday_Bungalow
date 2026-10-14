@@ -69,16 +69,18 @@ const Facilities: React.FC = () => {
         </div>
       </div>
 
-      <div className="facilities__grid">
-        {facilities.map((f, i) => (
-          <div className="facility-card" key={f.title}>
-            <span className="facility-card__number">{String(i + 1).padStart(2, '0')}</span>
-            <span className="facility-card__icon">{f.icon}</span>
-            <h3 className="facility-card__title">{f.title}</h3>
-            <p className="facility-card__desc">{f.desc}</p>
-            <span className="facility-card__tag">{f.tag}</span>
-          </div>
-        ))}
+      <div className="container">
+        <div className="facilities__grid">
+          {facilities.map((f, i) => (
+            <div className="facility-card" key={f.title}>
+              <span className="facility-card__number">{String(i + 1).padStart(2, '0')}</span>
+              <span className="facility-card__icon">{f.icon}</span>
+              <h3 className="facility-card__title">{f.title}</h3>
+              <p className="facility-card__desc">{f.desc}</p>
+              <span className="facility-card__tag">{f.tag}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

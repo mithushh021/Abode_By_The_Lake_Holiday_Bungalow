@@ -9,14 +9,15 @@
 
 .facilities__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--border);
 }
 
 .facility-card {
   background: var(--bg-primary);
-  padding: clamp(2rem, 3.5vw, 3rem);
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   position: relative;
   transition: background var(--transition);
   overflow: hidden;
@@ -91,7 +92,7 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 640px) {
   .facilities__header {
     margin-bottom: 2.5rem;
   }
@@ -101,6 +102,6 @@
   }
 
   .facility-card {
-    padding: 2.25rem 1.5rem;
+    padding: 1.75rem 1.25rem;
   }
 }

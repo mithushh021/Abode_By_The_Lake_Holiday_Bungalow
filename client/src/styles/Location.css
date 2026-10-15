@@ -57,6 +57,10 @@
 
 .location__content {}
 
+.location__detail > div:last-child {
+  min-width: 0;
+}
+
 .location__details {
   display: flex;
   flex-direction: column;
@@ -150,5 +154,26 @@
   }
   .location__map {
     height: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .location__map {
+    height: clamp(220px, 65vw, 300px);
+  }
+
+  .location__map-frame {
+    top: -0.6rem;
+    left: -0.6rem;
+    right: 0.6rem;
+    bottom: 0.6rem;
+  }
+
+  .location__detail {
+    gap: 0.85rem;
+  }
+
+  .location__nearby-list {
+    grid-template-columns: 1fr;
   }
 }

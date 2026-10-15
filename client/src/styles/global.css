@@ -101,7 +101,7 @@ section {
 }
 
 .container {
-  width: min(calc(100% - 3rem), 1200px);
+  width: min(calc(100% - 2rem), 1200px);
   margin: 0 auto;
   padding: 0;
 }
@@ -112,7 +112,7 @@ section {
 .pricing,
 .location,
 .contact {
-  padding-block: clamp(5rem, 8vw, 7.5rem);
+  padding: 60px 0px;
 }
 
 .facilities__header,
@@ -228,6 +228,12 @@ section {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: shimmer 4s linear infinite;
+}
+
+@media (max-width: 560px) {
+  .section-title {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+  }
 }
 
 /* ---- SCROLLBAR ---- */

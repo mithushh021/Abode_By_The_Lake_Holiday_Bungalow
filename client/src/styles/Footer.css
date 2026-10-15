@@ -24,6 +24,10 @@
   margin-bottom: 4rem;
 }
 
+.footer__grid > * {
+  min-width: 0;
+}
+
 .footer__brand {}
 
 .footer__logo-name {
@@ -176,8 +180,14 @@
 }
 
 @media (max-width: 500px) {
+  .footer {
+    padding-top: 3.5rem;
+  }
+
   .footer__grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
   }
   .footer__brand {
     grid-column: span 1;
@@ -185,5 +195,9 @@
   .footer__bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer__copy {
+    line-height: 1.8;
   }
 }

@@ -1,6 +1,6 @@
 /* ---- CONTACT ---- */
 .contact {
-  padding-block: clamp(5rem, 8vw, 7.5rem);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
   background: #211100eb;
   position: relative;
   overflow: hidden;
@@ -26,6 +26,10 @@
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr);
   gap: clamp(2.5rem, 6vw, 5rem);
   align-items: start;
+}
+
+.contact__grid > * {
+  min-width: 0;
 }
 
 /* ---- LEFT INFO ---- */
@@ -296,5 +300,13 @@
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .contact__info-items {
+    gap: 1.75rem;
+  }
+
+  .contact__form-sub {
+    margin-bottom: 1.75rem;
   }
 }

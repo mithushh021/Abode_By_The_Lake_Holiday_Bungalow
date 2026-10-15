@@ -335,17 +335,28 @@
     gap: 0.75rem;
   }
 
-  @media (max-width: 960px) {
-    .about__grid {
-      gap: 3rem;
-    }
+  .about__grid {
+    gap: 3rem;
   }
+
+  .about__image-frame {
+    top: -0.75rem;
+    left: -0.5rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+  }
+
   .about__image-badge {
     width: 58px;
     height: 58px;
   }
   .about__image-badge-num {
     font-size: 1.3rem;
+  }
+
+  .about__quote {
+    font-size: 1.15rem;
+    margin-bottom: 1.75rem;
   }
 }
 

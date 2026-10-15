@@ -117,7 +117,7 @@
 }
 
 /* Mobile */
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .navbar__links {
     display: none;
     position: absolute;
@@ -158,6 +158,10 @@
 }
 
 @media (max-width: 420px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+
   .navbar__logo-name {
     font-size: 1.15rem;
   }

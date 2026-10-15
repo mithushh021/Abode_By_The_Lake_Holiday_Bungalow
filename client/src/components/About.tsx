@@ -1,15 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import '../styles/About.css'
-import aboutImg from '../assets/bg.png'
+import aboutImg from '../assets/1.JPG?url'
 
-const features = [
-  'Lakeside View',
-  'Gated Property',
-  "Chef's Kitchen",
-  'Outdoor Dining',
-  'Sunrise Views',
-  'Serene Gardens',
-]
+
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null)
@@ -105,14 +98,7 @@ const About: React.FC = () => {
               comfort and quiet luxury.
             </p>
 
-            <div className="about__features about__reveal">
-              {features.map((f) => (
-                <div key={f} className="about__feature">
-                  <div className="about__feature-dot" />
-                  {f}
-                </div>
-              ))}
-            </div>
+            
           </div>
 
         </div>

@@ -1,6 +1,6 @@
 /* ---- PRICING ---- */
 .pricing {
-  padding-block: clamp(5rem, 8vw, 7.5rem);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
   background: #211100eb;
   position: relative;
   overflow: hidden;

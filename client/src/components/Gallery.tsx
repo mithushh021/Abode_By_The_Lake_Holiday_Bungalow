@@ -1,15 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/Gallery.css'
-import exterior from '../assets/bg.png'
-import bedroom from '../assets/bg3.png'
+import photo1 from '../assets/1.JPG?url'
+import photo2 from '../assets/2.JPG?url'
+import photo3 from '../assets/3.JPG?url'
+import photo4 from '../assets/4.JPG?url'
+import photo5 from '../assets/5.JPG?url'
+import photo6 from '../assets/6.JPG?url'
+import photo7 from '../assets/7.JPG?url'
+import photo8 from '../assets/8.JPG?url'
+import photo9 from '../assets/9.JPG?url'
+import photo10 from '../assets/10.JPG?url'
+import photo11 from '../assets/11.JPG?url'
+import photo12 from '../assets/12.JPG?url'
+import photo13 from '../assets/13.JPG?url'
 
 const photos = [
-  { url: exterior, label: 'Exterior' },
-  { url: bedroom, label: 'Master Bedroom' },
-  { url: 'https://images.unsplash.com/photo-1506974210756-8e1b8985d348?w=700&q=80', label: 'Lake View' },
-  { url: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=700&q=80', label: 'Pool' },
-  { url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80', label: 'Kitchen' },
-  { url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=80', label: 'Garden' },
+  { url: photo1, label: 'Bungalow exterior at dusk' },
+  { url: photo2, label: 'Landscaped garden' },
+  { url: photo3, label: 'Bungalow exterior' },
+  { url: photo4, label: 'Indoor swimming pool' },
+  { url: photo5, label: 'Garden courtyard' },
+  { url: photo6, label: 'Interior hallway' },
+  { url: photo7, label: 'Bungalow exterior at night' },
+  { url: photo8, label: 'Living room' },
+  { url: photo9, label: 'Bedroom' },
+  { url: photo10, label: 'Bedroom with garden view' },
+  { url: photo11, label: 'Verandah' },
+  { url: photo12, label: 'Bungalow driveway' },
+  { url: photo13, label: 'Upstairs hallway' },
 ]
 
 const Gallery: React.FC = () => {
@@ -41,11 +59,12 @@ const Gallery: React.FC = () => {
           {photos.map((p, i) => (
             <button
               className="gallery__item"
-              key={i}
+              key={p.label}
               onClick={() => setLightbox(p)}
               aria-label={`View ${p.label} photo`}
+              type="button"
             >
-              <img className="gallery__img" src={p.url} alt={p.label} />
+              <img className="gallery__img" src={p.url} alt={p.label} loading={i < 3 ? 'eager' : 'lazy'} />
               <span className="gallery__item-overlay" aria-hidden="true">
                 <span className="gallery__item-icon">⊕</span>
               </span>
